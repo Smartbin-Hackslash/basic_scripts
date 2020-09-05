@@ -3,9 +3,9 @@ name: First Workflow
 on: [push]
 
 jobs:
-  run-shell-command:
-      runs-on: ubuntu-latest
+  run-windows-command:
+      runs-on: windows-latest
       steps:
         - name: echo a string
           run: 
-              node -v
+              print Get-Location
