@@ -8,4 +8,4 @@ jobs:
       steps:
         - name: echo a string
           run: 
-              print Get-Location
+              Get-Location
