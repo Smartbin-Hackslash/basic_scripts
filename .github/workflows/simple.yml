@@ -1,11 +1,17 @@
-name: First Workflow
+name: Sample workflow
 
 on: [push]
 
 jobs:
+  run-shell-command:
+    runs-on: ubuntu-latest
+    steps : 
+    - name : step1
+      run: node -v 
+
   run-windows-command:
-      runs-on: windows-latest
-      steps:
-        - name: echo a string
-          run: 
-              Get-Location
+    runs-on: windows-latest
+    steps :
+    - name : show location
+      run : Get-Location
+      
