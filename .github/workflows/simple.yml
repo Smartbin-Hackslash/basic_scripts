@@ -7,11 +7,12 @@ jobs:
     runs-on: ubuntu-latest
     steps : 
     - name : step1
-      run: node -v 
+      run: | 
+        echo "${{ secrets.keyvalue }}"
+        echo $GITHUB_REPOSITORY
 
   run-windows-command:
     runs-on: windows-latest
     steps :
     - name : show location
       run : Get-Location
-      
