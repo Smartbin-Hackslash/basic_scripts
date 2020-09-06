@@ -1,0 +1,16 @@
+name: Workflow-Testing-Strategy
+on: [push]
+jobs:
+  node-version:
+    strategy:
+      matrix:
+        node-version: [6,8,10]
+    runs-on: ubuntu-latest
+    steps:
+      - name: check earlier version
+        run: node -v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: check later version
+        run: node -v1
