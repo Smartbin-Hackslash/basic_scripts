@@ -8,9 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: check earlier version
-        run: node -v1
+        run: node -v
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+          continue-on-error: true
       - name: check later version
-        run: node -v1
+        run: node -v
