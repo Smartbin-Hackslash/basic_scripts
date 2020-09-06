@@ -1,0 +1,10 @@
+name: Container Workflow
+on: [push]
+jobs:
+  node-docker:
+    runs-on: ubuntu-latest
+    container:
+      image: node:13.5.0-alpine3.10
+    steps:
+    - name: check version inside docker image
+      run: node -v
