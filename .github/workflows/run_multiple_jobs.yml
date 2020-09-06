@@ -1,0 +1,14 @@
+name: Workflow-Run-T2-Jobs
+on: [push]
+jobs:
+  runs-shell-command:
+    runs-on: ubuntu-latest
+    steps:
+    - name: job 1
+      run: echo "Welcome"
+  
+  runs-windows-command:
+    runs-on: windows-latest
+    steps:
+    - name: job 2
+      run: echo "okies" 
