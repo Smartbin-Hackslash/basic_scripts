@@ -1,18 +1,18 @@
-name: Sample workflow
+name: using strategy
 
 on: [push]
 
 jobs:
-  run-shell-command:
+  node-version:
+    strategy:
+      matrix:
+        node-version: [6,8,10]
     runs-on: ubuntu-latest
-    steps : 
-    - name : step1
-      run: | 
-        echo "${{ secrets.keyvalue }}"
-        echo $GITHUB_REPOSITORY
-
-  run-windows-command:
-    runs-on: windows-latest
-    steps :
-    - name : show location
-      run : Get-Location
+    steps:
+    - name: check 1
+      run: node -v
+    - uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: check 2
+      run: node -v
