@@ -10,4 +10,4 @@ jobs:
       with:
         who-to-greet: Raminder
     - name : Display output
-      run: echo "{{ steps.call1.outputs.time }}"
+      run: echo {{ steps.call1.outputs.time }}
